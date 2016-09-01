@@ -19,6 +19,8 @@ function randomLoaded() {
             password.push(wordList[randomNumbers[i]]);
         }
         passwordElement.textContent = password.join(" ");
+        document.getElementById("password-header").style.display = 'inherit';
+        passwordElement.style.display = "inline-block";
     }
     else {
         getWordList();

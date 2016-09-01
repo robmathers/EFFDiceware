@@ -16,9 +16,11 @@
             color: #2176C7;
             font-variant: small-caps;
         }
+        #password-header {
+            display: none;
+        }
         #password {
-
-            display: inline-block;
+            display: none;
             font-size: 1.5em;
             color: #A57706;
             background-color: #0A2933;
@@ -125,7 +127,7 @@
 
 <button id="generate">Generate</button>
 
-<h2>Your Password</h2>
+<h2 id="password-header">Your Password</h2>
 <code id="password"></code>
 
 <script type="text/javascript" src="diceware.js"></script>
