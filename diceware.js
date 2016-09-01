@@ -75,6 +75,7 @@ function generatePassword() {
         count = 4;
     }
     getRandomNumbers(count * 5);
+    ga('send', 'event', 'Passphrase', 'generated');
 }
 
 function arrowClicked(event) {
