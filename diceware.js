@@ -21,6 +21,10 @@ function randomLoaded() {
         passwordElement.textContent = password.join(" ");
         document.getElementById("password-header").style.display = 'inherit';
         passwordElement.style.display = "inline-block";
+
+        if (!isElementInViewport(passwordElement)) {
+            smoothScroll(findPos(passwordElement));
+        }
     }
     else {
         getWordList();
@@ -90,4 +94,40 @@ generateButton.addEventListener("click", generatePassword);
 var arrows = document.getElementsByClassName("arrow");
 for (var i = 0; i < arrows.length; i ++) {
     arrows[i].addEventListener("click", arrowClicked);
+}
+
+// Smooth scrolling
+function findPos(obj) {
+    var curtop = 0;
+    if (obj.offsetParent) {
+        do {
+            curtop += obj.offsetTop;
+        } while (obj = obj.offsetParent);
+    return [curtop];
+    }
+}
+
+function smoothScroll(y) {
+    var currentY = document.body.scrollTop;
+    var scrollInterval = setInterval(function() {
+        if (currentY < y) {
+            window.scroll(0, currentY);
+            currentY += 5;
+        }
+        else {
+            clearInterval(scrollInterval);
+        }
+    },1);
+}
+
+function isElementInViewport (el) {
+
+    var rect = el.getBoundingClientRect();
+
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /*or $(window).height() */
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
+    );
 }
