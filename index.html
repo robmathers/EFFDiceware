@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <title>EFF Diceware Generator</title>
+    <title>EFF Diceware Passphrase Generator</title>
     <style type="text/css">
         body {
             color: #708284;
@@ -119,8 +119,13 @@
     </style>
 </head>
 <body>
-<h1>Generate a Readable, Secure Password</h1>
-<p>Use the EFF's diceware list to generate a readable and secure password. This uses random.org's true random number generator for maximum security.</p>
+<h1>EFF Diceware Passphrase Generator</h1>
+<!--
+<h2>What?</h2>
+<p>Use the EFF's diceware list to generate a readable and secure passphrase. This uses random.org's true random number generator for maximum security.</p>
+ -->
+<h2>Generate a Readable, Secure Passphrase</h2>
+<p>We should all be using secure passwords, and <a href="https://1password.com/">password managers</a> are great at it. But sometimes you need a memorable and readable passphrase (say, for your Wi-Fi). <a href="https://en.wikipedia.org/wiki/Diceware">Diceware</a> has long been a good way to do so securely. The <a href="https://eff.org/">EFF</a> has <a href="https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases">a Diceware word list</a> designed for usability. This tool uses that list, and true random numbers from <a href="https://www.random.org/">Random.org</a>, to produce a readable, secure and memorable passphrase.</p>
 
 <span>Number of words:</span>
 
@@ -134,6 +139,9 @@
 
 <h2 id="password-header">Your Password</h2>
 <code id="password"></code>
+
+<h2>About</h2>
+<p>Created by <a href="http://robmathers.com">Rob Mathers</a>. No affiliation with the Electronic Frontier Foundation or Random.org.</p>
 
 <script type="text/javascript" src="diceware.js"></script>
 </body>
