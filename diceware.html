@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>EFF Diceware Generator</title>
+    <style type="text/css">
+        body {
+            color: #708284;
+            background-color: #042029;
+            font-family: "Avenir";
+        }
+        h1, h2, h3 {
+            font-family: "Avenir Next Condensed";
+            font-weight: 500;
+/*             color: #BD3613; */
+            color: #2176C7;
+            font-variant: small-caps;
+        }
+        #password {
+
+            display: inline-block;
+            font-size: 1.5em;
+            color: #A57706;
+            background-color: #0A2933;
+            padding: 0.75em;
+            border-radius: 0.5em;
+            border-color: #475B62;
+            border-style: solid;
+            border-width: 2px;
+        }
+        button {
+            font-family: "Avenir Next Condensed";
+            font-size: 1.2em;
+            font-weight: 500;
+/*             font-variant: small-caps; */
+            text-transform: uppercase;
+            display: inline-block;
+            color: #073642;
+            background-color: #d33682;
+            border: none;
+            width: 10em;
+            height: 3em;
+            appearance: none;
+            padding: 0;
+        }
+        button:hover {
+            color: #073642;
+            background-color: #c92c78;
+
+        }
+        button:active {
+/*             color: #819090; */
+/*             background-color: #92004A; */
+            color: white;
+        }
+
+        button.arrow {
+            width: 1.2em;
+            height: 1.2em;
+            background-color: transparent;
+            border-top: 0.3em solid white;
+            border-right: 0.3em solid white;
+            margin-left: 0.3em;
+            margin-right: 0.3em;
+            position: absolute;
+/*             left: -0.2em; */
+            left: -0.15em;
+            /*left: 7px;*/
+        }
+        button.arrow.up {
+            transform: rotate(-45deg);
+            top: -0.5em;
+        }
+        button.arrow.down {
+            transform: rotate(135deg);
+            bottom: -0.5em;
+        }
+
+        button.arrow:active {
+            border-color: #d33682;
+        }
+
+        button#generate {
+            display: block;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+/*             margin-left: 1em; */
+        }
+
+        input#count {
+            background-color: inherit;
+            color: inherit;
+            font-family: inherit;
+            font-size: 1.5em;
+            border: none;
+            width: 1.2em;
+            /* margin-left: .5em; */
+            /* margin-right: .5em; */
+            text-align: center;
+            padding: 0;
+        }
+
+        div#count-container {
+            display: inline-block;
+            position: relative;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            margin-left: 0.5em;
+            margin-right: 1.5em;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Generate a Readable, Secure Password</h1>
+<p>Use the EFF's diceware list to generate a readable and secure password. This uses random.org's true random number generator for maximum security.</p>
+
+<span>Number of words:</span>
+
+<div id="count-container">
+<button class="arrow up"></button>
+<input id="count" type="text" value="4" min="1" />
+<button class="arrow down"></button>
+</div>
+
+<button id="generate">Generate</button>
+
+<h2>Your Password</h2>
+<code id="password"></code>
+
+<script type="text/javascript" src="diceware.js"></script>
+</body>
+</html>
